@@ -1,4 +1,4 @@
-# RSNA__Brain_tumor_classification
+# RSNA Brain tumor classification
 
 ### **`Data Sources`** : 
    - [Original dataset](https://www.kaggle.com/c/rsna-miccai-brain-tumor-radiogenomic-classification/data)
