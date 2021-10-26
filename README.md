@@ -12,13 +12,17 @@
 - Currently, genetic analysis of cancer requires surgery to extract a tissue sample. Then it can take several weeks to determine the genetic characterization of the tumor. Depending upon the results and type of initial therapy chosen, a subsequent surgery may be necessary. If an accurate method to predict the genetics of the cancer through imaging (i.e., radiogenomics) alone could be developed, this would potentially minimize the number of surgeries and refine the type of therapy required.
 
 `Solution details` :
-  - **Preprocessing** : 
+  - **Pre-processing** : 
     - Used library : ***TorchIO*** (Python library for efficient loading, preprocessing, augmentation and patch-based sampling of 3D medical images in deep learning, following the design of PyTorch.)
     - TorchIO helped in converting all the MRI scans to same orientation.
     - resized all images to (256 x 256)
 
-  - **Model** : 
+  - **Modelling** : 
     - Densenet121 - 3D model([Monai](https://docs.monai.io/en/latest/networks.html#densenet))
+    - Optimizer : Adam
+    - criterion : binary_cross_entropy_with_logits
+    - Trained on GPU for 15 epochs each for different MRI scans(FLAIR, T1w, T1wce, T2w).
+    - Model files : [Source](https://www.kaggle.com/tharun2001/2-monoi-models-random-seeds)
 
-  - **Post processing** :
-    - simple average ensemble of all the 4 models built with four different MRI scans(FLAIR, T1w, T1wce, T2w).  
+  - **Post-processing** :
+    - simple average ensemble of all the 4 models built with four different MRI scans.  
